@@ -20,37 +20,67 @@ cd coffee-shop-react
 
 ### 2. Install dependencies
 ```bash
-# From project root
-cd server && npm install
-cd ../client && npm install
+npm install
 ```
 
 ### 3. Configure environment variables
-Each side has its own .env.local (ignored by git) and .env.example (committed placeholder).
-Server (backend):
+Each side has its own `.env.local` (ignored by git) and `.env.example` (committed placeholder).
+
+#### Server (backend)
 ```bash
 cd server
 cp .env.example .env.local
-
+```
+Edit `.env.local` with your real values:
+```bash
+PORT=4000
+MONGO_URI=mongodb://localhost:27017/coffee-shop
+JWT_SECRET=your_jwt_secret_here
 ```
 
-Edit .env.local with your real values:
+#### Client (frontend)
+```bash
+cd client
+cp .env.example .env.local
+```
+Edit `.env.local`:
 ```bash
 VITE_API_URL=http://localhost:4000/api
 ```
 
 ### 4. Run locally
+Open **two terminals** (one for the backend, one for the frontend).
+
+**Server (backend)**
 ```bash
+cd server
 npm run dev
 ```
-App will be available at [http://localhost:5173](http://localhost:5173)
+Runs on [http://localhost:4000](http://localhost:4000)
+
+**Client (frontend)**
+```bash
+cd client
+npm run dev
+```
+Runs on [http://localhost:5173](http://localhost:5173)
 
 ### 5. Build for production
+
+**Server (backend)**
 ```bash
+cd server
+npm run build
+```
+
+**Client (frontend)**
+```bash
+cd client
 npm run build
 npm run preview
 ```
-
+- The server build will output compiled backend code (e.g., in `dist/` if configured).
+- The client build will output static assets in `dist/`, which can be served by the backend or any static host.
 ---
 
 ## 🛠 Tech Stack
@@ -62,6 +92,15 @@ npm run preview
 ---
 
 ## 📂 Project Structure
+```
+project-root/
+ ├─ client/          # React app (frontend)
+ ├─ server/          # Node/Express backend
+ ├─ scripts/         # Helper scripts (GitHub issues, etc.)
+ ├─ .gitignore
+ └─ README.md
+```
+
 ```
 src/
  ├─ api.ts         # API client (fetch products, create product)
