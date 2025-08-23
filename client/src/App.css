@@ -1,0 +1,48 @@
+:root {
+--bg: #0b0c10;
+--panel: #111319;
+--muted: #6b7280;
+--brand: #4f46e5;
+--ok: #22c55e;
+--danger: #ef4444;
+}
+
+
+body { background: var(--bg); color: #e5e7eb; }
+
+
+.header {
+display: flex; align-items: center; justify-content: space-between;
+padding: 16px 20px; background: var(--panel); border-bottom: 1px solid #1f2937;
+position: sticky; top: 0; z-index: 10;
+}
+.brand { font-weight: 700; letter-spacing: .3px; }
+.nav { display: flex; gap: 8px; }
+.nav a {
+padding: 8px 12px; border-radius: 10px; text-decoration: none; color: #cbd5e1;
+}
+.nav a.active { background: #1f2430; color: #fff; }
+
+
+.container { max-width: 1060px; margin: 0 auto; padding: 24px; }
+.hero { display: grid; gap: 16px; grid-template-columns: 1.2fr 1fr; align-items: center; }
+.hero .panel { background: var(--panel); padding: 20px; border-radius: 14px; box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+.cta { display: flex; gap: 12px; margin-top: 14px; }
+.btn { padding: 10px 14px; border-radius: 12px; border: 1px solid #262b36; background: #171a22; color: #e5e7eb; cursor: pointer; }
+.btn.primary { background: var(--brand); border-color: var(--brand); color: white; }
+.btn.ghost { background: transparent; }
+.input { background: #0f131a; border: 1px solid #222633; padding: 10px 12px; border-radius: 10px; color: #e5e7eb; }
+
+
+.tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+.tab { padding: 8px 12px; border-radius: 10px; border: 1px solid #262b36; background: #121621; cursor: pointer; color: #cbd5e1; }
+.tab.active { background: #1e2431; color: #fff; border-color: #2a3141; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+.card { background: var(--panel); border: 1px solid #1f2937; padding: 14px; border-radius: 14px; box-shadow: 0 8px 22px rgba(0,0,0,.25); }
+.price { color: #a7f3d0; font-weight: 700; }
+.muted { color: var(--muted); font-size: .925rem; }
+.row { display: flex; gap: 10px; }
+
+
+.alert { color: #fecaca; background: #3f1f1f; border: 1px solid #7f1d1d; padding: 10px 12px; border-radius: 10px; }
+.loading { opacity: .8; font-style: italic; }
