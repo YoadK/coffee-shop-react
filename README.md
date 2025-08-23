@@ -20,16 +20,21 @@ cd coffee-shop-react
 
 ### 2. Install dependencies
 ```bash
-npm install
+# From project root
+cd server && npm install
+cd ../client && npm install
 ```
 
-### 3. Configure environment
-Copy the example file and adjust values as needed:
+### 3. Configure environment variables
+Each side has its own .env.local (ignored by git) and .env.example (committed placeholder).
+Server (backend):
 ```bash
+cd server
 cp .env.example .env.local
+
 ```
 
-Edit `.env.local`:
+Edit .env.local with your real values:
 ```bash
 VITE_API_URL=http://localhost:4000/api
 ```
