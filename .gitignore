@@ -116,3 +116,9 @@ build/Release/
 # Temporary folders
 tmp/
 temp/
+
+# Project helper scripts
+# Keep .sh scripts, ignore temporary CSV/log files
+scripts/**/*.csv
+scripts/**/*.log
+!scripts/**/*.sh
