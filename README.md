@@ -1,4 +1,4 @@
-# ☕ Coffee Shop React App
+# ☕ Coffee Shop - A React App
 
 A simple **Vite + React + TypeScript** project connected to a backend API.  
 This project demonstrates:
