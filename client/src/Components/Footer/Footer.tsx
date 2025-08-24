@@ -1,11 +1,24 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
-  const year = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="footer" role="contentinfo">
-      <div className="container footer-inner">
-        <small>© {year} Coffee Shop. All rights reserved.</small>
+    <footer className="footer">
+      <div className="footer-inner container">
+        <div className="footer-brand">
+          <span>☕ Coffee Shop © {currentYear}</span>
+        </div>
+        
         <div className="footer-links">
-          <a href="https://github.com/YoadK/coffee-shop-react" target="_blank" rel="noreferrer">
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/products">Products</Link>
+          <a 
+            href="https://github.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
             GitHub
           </a>
         </div>
